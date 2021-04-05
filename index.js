@@ -3,7 +3,7 @@ const app = express()
 const service = require('./src/services')
 
 const router = express.Router()
-router.get('/', (req, res)=> {
+router.get('/teste', (req, res)=> {
     res.send('rodando')
 })
 router.get('/characters', service.getAll)
@@ -14,7 +14,7 @@ router.get('/characters/:id/series', service.getBySerie)
 router.get('/characters/:id/stories', service.getByStory)
 
 
-app.use('/v1/public', router)
+app.use('/', router)
 
 app.listen(process.env.PORT || 8081, () => {
     console.log('Server started on port 8081')
