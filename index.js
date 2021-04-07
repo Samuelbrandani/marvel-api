@@ -16,8 +16,9 @@ router.get('/characters/:id/stories', service.getByStory)
 
 app.use('/', router)
 
-console.log(process.env.PORT)
+const porta = process.env.PORT;
+console.log(porta)
 
-app.listen(process.env.PORT || 8081, () => {
+app.listen(porta || 8081, () => {
     console.log('Server started on port 8081')
 })
