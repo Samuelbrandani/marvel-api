@@ -1,12 +1,12 @@
 
 const baseUrl = 'http://gateway.marvel.com/v1/public/characters';
-const apiKey = process.env.apiKey;
-const timestamp = process.env.timestamp;
-const hash = process.env.hash;
+const apiKey = '98b8d9604bdff26fadfb159e8aad2d76';
+const hash = 'd7e335c35463a024e5dad732278e54ef'
+const ts = 1
 const axios = require('axios');
 
 const getAll = (req, res) => {
-    var url = `${baseUrl}?ts=${timestamp}&apikey=${apiKey}&hash=${hash}`
+    var url = `${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}`
     axios.get(url)
         .then(function (response) {
             console.log(response);
