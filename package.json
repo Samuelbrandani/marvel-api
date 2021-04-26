@@ -1,17 +1,20 @@
 {
   "name": "api-marvel",
   "version": "1.0.0",
-  "description": "",
+  "description": "Trabalho Api Rodrigo",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Samuel Alves Brandani e Gabriel Ricieri Martines Ribeiro",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "dockerfile": "^0.1.1",
     "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-ui-express": "^4.0.7"
   }
 }

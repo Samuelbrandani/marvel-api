@@ -1,0 +1,117 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "API Marvel",
+      "version": "1.0.0",
+      "title": "Marvel API",
+      "contact": {
+        "email": "Gabrielmartines145@gmail.com, samuel@brandani.net.br"
+      },
+      "license": {
+        "name": "node 14.16.0",
+        "url": "https://openjsf.org/certification/"
+      }
+    },
+    "host": "virtserver.swaggerhub.com",
+    "basePath": "GabrielRicieri/Api_Marvel/1.0.0#/Manufacturer",
+    "tags": [
+      {
+        "name": "admins",
+        "description": "string"
+      },
+      {
+        "name": "Gabriel Ricieri Martines Ribeiro & Samuel Alves Brandani",
+        "description": "API da Marvel"
+      }
+    ],
+    "schemes": [
+      "https"
+    ],
+    "paths": {
+      "/inventory": {
+        "get": {
+          "summary": "API disponibilizada pela Marvel",
+          "description": "Lista todos os nomes dos persoangens, revistas em quadrinho e sua data de lançamento",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "nome de personagens/quadrinhos/data de lançamento",
+              "description": "mostra os nomes de persoangens, revistas em quadrinhos relacionadas e sua data de lançamento",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/InventoryItem"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Requisição realizada"
+            },
+            "400": {
+              "description": "Erro de requisição"
+            },
+            "500": {
+              "description": "Erro interno no servidor"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "InventoryItem": {
+        "type": "string",
+        "required": [
+          "id",
+          "name",
+          "series",
+          "stories"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "1011334"
+          },
+          "name": {
+            "type": "string",
+            "example": "Iron Man"
+          },
+          "releaseDate": {
+            "type": "string",
+            "format": "date-time",
+            "example": "1963-03-23 / 12:33:00"
+          },
+          "series": {
+            "type": "string",
+            "example": "Avengers Assemble"
+          },
+          "stories": {
+            "type": "string",
+            "example": "Invencible Iron Man"
+          },
+          "manufacturer": {
+            "$ref": "#/definitions/Manufacturer"
+          }
+        }
+      },
+      "Manufacturer": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Marvel"
+          },
+          "homePage": {
+            "type": "string",
+            "format": "url",
+            "example": "https://developer.marvel.com/"
+          }
+        }
+      }
+    }
+  }
