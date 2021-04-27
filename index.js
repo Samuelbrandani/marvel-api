@@ -18,25 +18,11 @@ router.get('/v1/public/characters/:id/stories', service.getByStory)
 app.use(express.json());
 app.use('/', router)
 
-//Documentação server SwaggerHub: https://app.swaggerhub.com/apis/BlazeF35/API_marvel/1.0.0
-//const swaggerOptions = {
- //   swaggerDefinition: {
- //       info: {
-  //          title: 'MarvelAPI',
-   //         description: 'API Marvel',
-   //         version: '1.0.0',
-   //         contact: {
-    //            name: 'Samuel Alves Brandani e Gabriel Ricieri Martines Ribeiro',
-  //              description: '',
-///email: ''
- //           },
- //           servers: ['http://localhost:8081']
- //       }
-  //  },
-  //  apis: ['index']
-//};
+
 
 //const swaggerDocs = swaggerJSDoc(swaggerOptions);
+//url para acessa o Swagger http://localhost:8081/api-docs/#/
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJSDoc));
 // Routes
 /**
