@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "author": "Samuel Alves Brandani e Gabriel Ricieri Martines Ribeiro",
   "license": "ISC",

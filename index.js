@@ -5,9 +5,7 @@ const swaggerUi = require('swagger-ui-express')
 const swaggerJSDoc = require('./documentation.json')
 
 const router = express.Router()
-router.get('/', (req, res) => {
-    res.send('rodando')
-})
+
 router.get('/v1/public/characters', service.getAll)
 router.get('/v1/public/characters/:id', service.getById)
 router.get('/v1/public/characters/:id/comics', service.getByComics)
